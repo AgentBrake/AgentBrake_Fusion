@@ -1,0 +1,11 @@
+{
+  "name": "agentbrake-fusion-frontend-wrapper",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Submission wrapper for the AgentBrake-Fusion Studio frontend. The actual React source lives in ../web/studio.",
+  "scripts": {
+    "install:studio": "cd ../web/studio && npm install",
+    "dev": "cd ../web/studio && npm run dev -- --host 127.0.0.1",
+    "build": "cd ../web/studio && npm run build"
+  }
+}

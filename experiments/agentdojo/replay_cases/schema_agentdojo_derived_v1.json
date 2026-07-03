@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentDojo Derived Replay Case v1",
+  "type": "object",
+  "required": [
+    "case_schema_version",
+    "case_id",
+    "source",
+    "source_trace",
+    "source_trace_file",
+    "source_raw_file",
+    "suite",
+    "method",
+    "model",
+    "attack",
+    "user_task_id",
+    "injection_task_id",
+    "label",
+    "prior",
+    "prior_messages",
+    "prior_tool_results",
+    "current_tool_call",
+    "tool_call",
+    "expected_decision",
+    "ground_truth_violation",
+    "expected_reason_codes",
+    "label_source",
+    "review_status",
+    "case_origin",
+    "standard_agentdojo_e2e_score",
+    "expected_agentdojo_user_success",
+    "expected_agentdojo_injection_success"
+  ],
+  "properties": {
+    "case_schema_version": {"const": "agentdojo_replay_case_v1"},
+    "source": {"const": "agentdojo_trace"},
+    "label": {"enum": ["safe", "unsafe"]},
+    "standard_agentdojo_e2e_score": {"const": false},
+    "current_tool_call": {
+      "type": "object",
+      "required": ["tool", "args"]
+    },
+    "ground_truth_violation": {
+      "type": "object",
+      "required": ["type", "unsafe_args", "evidence"]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+name: mcp
+mode: enforce
+policies:
+  - MCPOutputUntrustedPolicy
+  - MCPTokenPassthroughDeny
+  - DestructiveMCPToolApproval

@@ -1,0 +1,3 @@
+{
+  "must_detect": [".env", "package.json", ".github/workflows/release.yml"]
+}

@@ -1,0 +1,8 @@
+name: supply_chain
+mode: enforce
+policies:
+  - GitDependencyPolicy
+  - TarballDependencyPolicy
+  - RegistryPoisoningPolicy
+  - LifecycleScriptPolicy
+  - PublishDoubleApprovalPolicy

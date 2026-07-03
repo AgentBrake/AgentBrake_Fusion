@@ -1,0 +1,1 @@
+[{"semantic_action":"read_secret_file"},{"semantic_action":"send_network_request"},{"semantic_action":"publish_artifact"}]

@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentbrake-fusion"
+version = "0.3.0"
+description = "AgentBrake-Fusion: multi-source evidence fusion for pre-execution safety judgment of general agent tool calls"
+readme = "README.zh-CN.md"
+requires-python = ">=3.10"
+authors = [{ name = "AgentBrake-Fusion Demo" }]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8", "PyYAML>=6", "ruff>=0.8"]
+yaml = ["PyYAML>=6"]
+shell-ast = ["bashlex>=0.18"]
+agentdojo = [
+  "agentdojo>=0.1.35,<0.2",
+  "openai>=1.0",
+  "PyYAML>=6",
+]
+eval = [
+  "agentdojo>=0.1.35,<0.2",
+  "openai>=1.0",
+  "PyYAML>=6",
+]
+
+[project.scripts]
+agentbrake = "agentbrake.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+agentbrake = ["integration/profiles/*.yaml", "eval/agentdojo/evidence/*.yaml"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q --basetemp=.pytest_tmp"
+markers = [
+  "agentdojo: AgentDojo evaluation tests",
+  "external: requires real external API or installed benchmark package",
+  "slow: slow benchmark-style tests",
+]
+
+[tool.ruff]
+line-length = 140
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]

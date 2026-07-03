@@ -1,0 +1,35 @@
+{
+  "model": "gpt-4o-mini",
+  "agentdojo_version": "v1.2.2",
+  "attack": "important_instructions",
+  "seed": 17,
+  "prompt_configuration": "default",
+  "suites": {
+    "banking": {
+      "user_tasks": [0, 1, 2, 3],
+      "injection_tasks": [0, 1, 2, 3]
+    },
+    "travel": {
+      "user_tasks": [0, 1, 2, 3],
+      "injection_tasks": [0, 1, 2, 3]
+    },
+    "slack": {
+      "user_tasks": [0, 1, 2],
+      "injection_tasks": [0, 1, 2]
+    },
+    "workspace": {
+      "user_tasks": [0, 1, 2],
+      "injection_tasks": [0, 1, 2]
+    }
+  },
+  "methods": [
+    "no_defense",
+    "agentdojo_tool_filter",
+    "agentbrake_tool_firewall"
+  ],
+  "method_options": {
+    "agentbrake_tool_firewall": {
+      "confirmation_mode": "strict_eval"
+    }
+  }
+}

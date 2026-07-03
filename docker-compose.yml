@@ -1,0 +1,19 @@
+services:
+  agentbrake-fusion:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      AGENTBRAKE_HOST: 0.0.0.0
+      AGENTBRAKE_BACKEND_PORT: 8765
+      AGENTBRAKE_STUDIO_API_KEY: agentbrake-fusion-local
+      AGENTBRAKE_DEMO_MODE: "true"
+      AGENTBRAKE_SANDBOX: "true"
+      ALLOW_REAL_TOOLS: "false"
+      OPENCLAW_GATEWAY_URL: ${OPENCLAW_GATEWAY_URL:-}
+      A2A_GATEWAY_URL: ${A2A_GATEWAY_URL:-}
+    ports:
+      - "8765:8765"
+    volumes:
+      - ./artifacts:/app/artifacts
+      - ./.agentbrake:/app/.agentbrake

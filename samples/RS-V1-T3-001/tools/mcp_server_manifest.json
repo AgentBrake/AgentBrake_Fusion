@@ -1,0 +1,10 @@
+{
+  "mcp_server_id": "mcp_github_001",
+  "launch_command": "node server.js",
+  "config_source": ".mcp/config.json",
+  "declared_tools": ["read_issue", "create_pr", "deploy"],
+  "declared_capabilities": ["read", "write", "deploy"],
+  "auth_required": true,
+  "token_policy": "audience_bound_only",
+  "trust_level": "tool_untrusted"
+}

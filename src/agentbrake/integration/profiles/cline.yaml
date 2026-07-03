@@ -1,0 +1,8 @@
+agent: cline
+display_name: Cline OpenAI-compatible endpoint
+protocol: openai-compatible
+wire_api: chat
+config_files:
+  - .agentbrake/agent.env
+config_apply: snippet
+restore: manifest

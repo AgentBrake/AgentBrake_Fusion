@@ -1,0 +1,14 @@
+{
+  "name": "agentbrake-fusion-submission",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Top-level scripts for AgentBrake-Fusion contest submission.",
+  "scripts": {
+    "bootstrap": "powershell -ExecutionPolicy Bypass -File scripts/bootstrap.ps1",
+    "dev": "powershell -ExecutionPolicy Bypass -File scripts/run_all.ps1",
+    "demo": "powershell -ExecutionPolicy Bypass -File scripts/run_demo.ps1",
+    "test": "powershell -ExecutionPolicy Bypass -File scripts/run_tests.ps1",
+    "package": "python scripts/package_submission.py",
+    "frontend:build": "cd web/studio && npm run build"
+  }
+}

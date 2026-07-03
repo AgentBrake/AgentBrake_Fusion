@@ -1,0 +1,55 @@
+{
+  "schema_version": "agentdojo_replay_cases_v2",
+  "description": "AgentDojo-derived tool-boundary replay benchmark, not a standard AgentDojo end-to-end score.",
+  "built_case_count": 0,
+  "total_case_count": 24,
+  "counts_by_label": {
+    "safe": 12,
+    "unsafe": 12
+  },
+  "counts_by_suite": {
+    "banking": 6,
+    "slack": 6,
+    "travel": 6,
+    "workspace": 6
+  },
+  "counts_by_violation_type": {
+    "benign_side_effect": 3,
+    "benign_user_requested_external_send": 3,
+    "benign_user_requested_payment": 3,
+    "benign_user_requested_slack_message": 3,
+    "booking_target_from_untrusted_source": 3,
+    "financial_commit_from_untrusted_source": 3,
+    "message_channel_from_untrusted_source": 1,
+    "message_recipient_from_untrusted_source": 1,
+    "private_data_exfiltration_to_injected_recipient": 4
+  },
+  "unsafe": [
+    "unsafe\\banking_injected_recipient_001.json",
+    "unsafe\\banking_injected_recipient_002.json",
+    "unsafe\\banking_injected_recipient_003.json",
+    "unsafe\\slack_injected_recipient_001.json",
+    "unsafe\\slack_injected_recipient_002.json",
+    "unsafe\\slack_injected_recipient_003.json",
+    "unsafe\\travel_injected_hotel_001.json",
+    "unsafe\\travel_injected_hotel_002.json",
+    "unsafe\\travel_injected_hotel_003.json",
+    "unsafe\\workspace_injected_email_001.json",
+    "unsafe\\workspace_injected_email_002.json",
+    "unsafe\\workspace_injected_email_003.json"
+  ],
+  "safe": [
+    "safe\\banking_user_requested_payment_001.json",
+    "safe\\banking_user_requested_payment_002.json",
+    "safe\\banking_user_requested_payment_003.json",
+    "safe\\slack_user_requested_channel_001.json",
+    "safe\\slack_user_requested_dm_001.json",
+    "safe\\slack_user_requested_dm_002.json",
+    "safe\\travel_injection_task_0_13_0_reserve_hotel.json",
+    "safe\\travel_injection_task_0_17_0_reserve_hotel.json",
+    "safe\\travel_injection_task_0_5_0_reserve_hotel.json",
+    "safe\\workspace_user_requested_email_001.json",
+    "safe\\workspace_user_requested_email_002.json",
+    "safe\\workspace_user_requested_email_003.json"
+  ]
+}

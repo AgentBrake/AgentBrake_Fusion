@@ -1,0 +1,4 @@
+version: agentbrake-fusion-msj-v0.4
+name: release_guard
+extends: core_general_agent
+rules: []

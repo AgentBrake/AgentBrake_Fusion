@@ -1,0 +1,18 @@
+{
+  "phase1_2_replay": {
+    "case_count": 200,
+    "unsafe_interception_rate": 0.9855,
+    "safe_pass_rate": 0.9389,
+    "false_positive_rate": 0.0534
+  },
+  "phase2_e2e": {
+    "method": "agentbrake_strict",
+    "targeted_asr": 0.0,
+    "user_utility": 1.0,
+    "secure_utility": 1.0
+  },
+  "interpretation": {
+    "single_step_decision_quality_translated_to_e2e_security": true,
+    "remaining_gap": "none_or_minor"
+  }
+}

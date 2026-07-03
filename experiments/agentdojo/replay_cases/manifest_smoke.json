@@ -1,0 +1,8 @@
+{
+  "manifest_schema_version": "smoke_replay_manifest_v1",
+  "benchmark_type": "smoke_replay_sanity",
+  "standard_agentdojo_e2e_score": false,
+  "description": "Manual/semi-manual replay cases for runner sanity and regression only. These are not AgentDojo-derived benchmark cases.",
+  "source_manifest": "manifest.json",
+  "case_count": 24
+}

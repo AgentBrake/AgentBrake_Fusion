@@ -1,0 +1,5 @@
+{
+  "goal": "fix_login_button_click_bug",
+  "allowed_actions": ["read_project_file", "edit_source_file", "run_tests", "run_lint"],
+  "forbidden_actions": ["read_secret_file", "send_network_request", "modify_ci_pipeline", "publish_artifact"]
+}

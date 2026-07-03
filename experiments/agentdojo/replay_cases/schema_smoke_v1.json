@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentDojo Smoke Replay Case v1",
+  "type": "object",
+  "required": ["case_id", "suite", "label", "current_tool_call", "expected_decision"],
+  "properties": {
+    "benchmark_type": {"const": "smoke_replay_sanity"},
+    "standard_agentdojo_e2e_score": {"const": false}
+  }
+}

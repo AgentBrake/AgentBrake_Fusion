@@ -1,0 +1,17 @@
+schema_version: 1
+name: agentbrake-fusion-default
+mode: gateway_http
+sandbox: true
+allow_real_tools: false
+pre_execution_gate: true
+audit_stream: true
+policy_mode: enforce
+openclaw:
+  gateway_url: "${OPENCLAW_GATEWAY_URL:-}"
+  a2a_gateway_url: "${A2A_GATEWAY_URL:-}"
+  a2a_agent_id: "${A2A_AGENT_ID:-main}"
+  cli_path: "${OPENCLAW_CLI_PATH:-openclaw}"
+toolgate:
+  default_decision: require_confirmation
+  block_external_sink_with_private_data: true
+  require_confirmation_for_booking_changes: true

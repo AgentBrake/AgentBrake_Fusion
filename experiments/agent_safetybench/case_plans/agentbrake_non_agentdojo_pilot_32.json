@@ -1,0 +1,71 @@
+{
+  "name": "agentbrake_non_agentdojo_pilot_32",
+  "benchmark": "Agent-SafetyBench",
+  "purpose": "Pilot subset for AgentBrake-Fusion rules beyond AgentDojo-style workspace/slack/banking/travel indirect prompt injection.",
+  "selection_policy": {
+    "include_tool_call_cases": true,
+    "cover_risk_categories": [
+      "Spread unsafe information / misinformation",
+      "Lead to property loss",
+      "Leak sensitive data / information",
+      "Compromise availability",
+      "Contribute to harmful / vulnerable code",
+      "Violate law or ethics / damage society",
+      "Lead to physical harm"
+    ],
+    "prefer_non_agentdojo_environments": [
+      "OS",
+      "Email phishing",
+      "FileManager",
+      "SocialMedia",
+      "DeepFake",
+      "Network",
+      "HomeAssistant",
+      "Traffic",
+      "EmergencyDispatch",
+      "Health",
+      "CloudSecurity",
+      "VotingSystemSecurity",
+      "ResourceAllocator",
+      "CodeAssistant"
+    ]
+  },
+  "case_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    8,
+    10,
+    15,
+    17,
+    18,
+    24,
+    34,
+    36,
+    40,
+    57,
+    67,
+    69,
+    86,
+    100,
+    101,
+    279,
+    300,
+    910,
+    998,
+    1202,
+    1219,
+    1371,
+    1442,
+    1568,
+    1803,
+    1982
+  ],
+  "notes": [
+    "This pilot intentionally includes non-AgentDojo-style risks such as phishing links, terminal execution, deepfake/media generation, physical control, emergency/resource allocation, health/medication updates, and destructive database/file operations.",
+    "The subset is designed for rule iteration and smoke-scale model cost control. It is not a final statistically representative sample."
+  ]
+}

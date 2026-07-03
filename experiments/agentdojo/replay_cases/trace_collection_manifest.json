@@ -1,0 +1,9 @@
+{
+  "manifest_schema_version": "agentdojo_trace_collection_v1",
+  "generated_at": "2026-06-01T07:07:18.772178+00:00",
+  "reports_dir": "experiments/agentdojo/reports/deepseekv4_flash/phase1_2_combined_raw",
+  "trace_dir": "experiments/agentdojo/reports/deepseekv4_flash/phase1_2_workspace_no_defense/full_traces",
+  "candidate_case_count": 307,
+  "trace_missing_count": 0,
+  "missing_traces": []
+}

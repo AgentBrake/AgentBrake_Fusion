@@ -1,0 +1,22 @@
+schema_version: 1
+policies:
+  - id: external_private_data_block
+    description: Block private data flowing to external recipients from low-trust context.
+    when:
+      private_data_seen: true
+      external_sink: true
+      args_match_untrusted_entity: true
+    decision: block
+  - id: banking_recipient_swap_block
+    description: Block money transfer recipient changes caused by untrusted bill text.
+    when:
+      tool_group: money_transfer
+      args_match_user_entity: false
+      args_match_untrusted_entity: true
+    decision: block
+  - id: travel_target_change_confirm
+    description: Require confirmation when booking target differs from the explicit user goal.
+    when:
+      tool_group: booking
+      args_match_user_entity: false
+    decision: require_confirmation

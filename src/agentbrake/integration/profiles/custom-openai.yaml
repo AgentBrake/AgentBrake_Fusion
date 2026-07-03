@@ -1,0 +1,11 @@
+agent: custom-openai
+display_name: Custom OpenAI-compatible Agent
+protocol: openai-compatible
+wire_api: chat
+config_files:
+  - .agentbrake/agent.env
+  - .agentbrake/agent-instructions.md
+config_apply: snippet
+restore: manifest
+notes:
+  - Set the agent model provider base URL to AgentBrake-Fusion Gateway.

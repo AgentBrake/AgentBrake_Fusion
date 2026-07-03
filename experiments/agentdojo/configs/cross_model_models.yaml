@@ -1,0 +1,36 @@
+models:
+  - model_key: deepseek_v4_flash
+    provider: deepseek
+    model_id: deepseek-v4-flash
+    role: baseline_reference
+    api_key_env: DEEPSEEK_API_KEY
+    base_url_env: DEEPSEEK_API_BASE
+    adapter: openai_compatible_chat
+    enabled: false
+
+  - model_key: qwen_plus
+    provider: alibaba_dashscope
+    model_id: qwen-plus
+    role: qwen_balanced_representative
+    api_key_env: DASHSCOPE_API_KEY
+    base_url_env: DASHSCOPE_API_BASE
+    adapter: openai_compatible_chat
+    enabled: true
+
+  - model_key: qwen_flash
+    provider: alibaba_dashscope
+    model_id: qwen-flash
+    role: qwen_cost_effective_representative
+    api_key_env: DASHSCOPE_API_KEY
+    base_url_env: DASHSCOPE_API_BASE
+    adapter: openai_compatible_chat
+    enabled: false
+
+  - model_key: qwen35_flash
+    provider: alibaba_dashscope
+    model_id: qwen3.5-flash
+    role: qwen_new_flash_representative
+    api_key_env: DASHSCOPE_API_KEY
+    base_url_env: DASHSCOPE_API_BASE
+    adapter: openai_compatible_chat
+    enabled: false

@@ -1,0 +1,6 @@
+name: memory
+mode: enforce
+policies:
+  - TaintedMemoryWriteGate
+  - TaintedMemoryCannotAuthorizeHighRiskAction
+  - MemoryTTLPolicy

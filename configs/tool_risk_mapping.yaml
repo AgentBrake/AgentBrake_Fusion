@@ -1,0 +1,25 @@
+tool_risk_mapping:
+  send_email:
+    group: external_communication
+    side_effect: true
+    default_risk: high
+  send_channel_message:
+    group: external_communication
+    side_effect: true
+    default_risk: high
+  send_money:
+    group: money_transfer
+    side_effect: true
+    default_risk: critical
+  reserve_hotel:
+    group: booking
+    side_effect: true
+    default_risk: high
+  share_file:
+    group: file_sharing
+    side_effect: true
+    default_risk: critical
+  run_command:
+    group: command_execution
+    side_effect: true
+    default_risk: critical

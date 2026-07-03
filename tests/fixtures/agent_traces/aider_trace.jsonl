@@ -1,0 +1,1 @@
+{"event_type":"assistant_tool_call","trace_id":"aider_trace_001","turn_id":"turn_1","agent_type":"aider","source_ids":["src_aider_issue_001"],"tool_call":{"id":"aider_shell_1","name":"run_command","arguments":{"command":"npm test"}},"expected":{"canonical_tool":"bash_exec","semantic_action":"run_tests","raw_action":"npm test"}}

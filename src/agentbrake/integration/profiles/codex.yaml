@@ -1,0 +1,15 @@
+agent: codex
+display_name: Codex CLI
+protocol: openai-compatible
+wire_api: responses
+api_key_env: AGENTBRAKE_GATEWAY_API_KEY
+config_files:
+  - ~/.codex/config.toml
+config_apply: native
+restore: manifest
+real_agent_command:
+  - codex
+  - exec
+notes:
+  - Codex CLI uses the Responses wire API.
+  - The provider must set env_key instead of embedding the API key.

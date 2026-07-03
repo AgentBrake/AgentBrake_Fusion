@@ -1,0 +1,11 @@
+agent: generic
+display_name: Generic OpenAI-compatible Agent
+protocol: openai-compatible
+wire_api: chat
+config_files:
+  - .agentbrake/agent.env
+  - .agentbrake/agent-instructions.md
+config_apply: snippet
+restore: manifest
+notes:
+  - Use OPENAI_BASE_URL and OPENAI_API_KEY from .agentbrake/agent.env.

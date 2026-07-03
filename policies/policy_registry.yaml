@@ -1,0 +1,17 @@
+roles:
+  local_dev_strict:
+    core: enforce
+    gateway: enforce
+    supply_chain: enforce
+    secret_egress: enforce
+    mcp: enforce
+    memory: enforce
+    ci_cd: enforce
+  benchmark_observe:
+    core: observe_only
+    gateway: observe_only
+  release_guard:
+    core: enforce
+    ci_cd: enforce
+    publish: enforce
+    secret_egress: enforce

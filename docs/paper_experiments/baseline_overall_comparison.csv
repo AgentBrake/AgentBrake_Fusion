@@ -1,0 +1,9 @@
+defense,model,asr,security,user_utility,secure_utility
+MELON,deepseek-v4-flash,0.84,99.16,34.25,33.40
+MELON,qwen-plus,0.42,99.58,26.13,25.71
+Progent,deepseek-v4-flash,9.00,91.00,73.68,69.78
+Progent,qwen-plus,1.18,98.82,72.07,70.89
+DRIFT,deepseek-v4-flash,0.74,99.26,64.81,64.59
+DRIFT,qwen-plus,3.58,96.42,75.34,73.87
+RepoShield,deepseek-v4-flash,0.21,99.79,75.24,75.24
+RepoShield,qwen-plus,0.21,99.79,61.22,61.22

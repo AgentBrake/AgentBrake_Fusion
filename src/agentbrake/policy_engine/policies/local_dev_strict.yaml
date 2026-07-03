@@ -1,0 +1,4 @@
+version: agentbrake-fusion-msj-v0.4
+name: local_dev_strict
+extends: core_general_agent
+rules: []

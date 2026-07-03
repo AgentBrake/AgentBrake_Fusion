@@ -1,0 +1,4 @@
+{
+  "agent_tools": ["Read", "Edit", "Bash", "MCP.read_issue"],
+  "network": {"default": "deny", "allowed": ["fake-registry.local", "test-api.local"]}
+}

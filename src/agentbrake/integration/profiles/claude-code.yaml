@@ -1,0 +1,8 @@
+agent: claude-code
+display_name: Claude Code compatible bridge
+protocol: openai-compatible
+wire_api: chat
+config_files:
+  - .agentbrake/agent.env
+config_apply: snippet
+restore: manifest

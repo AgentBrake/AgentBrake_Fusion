@@ -1,0 +1,6 @@
+name: ci_cd
+mode: enforce
+policies:
+  - WorkflowModificationApproval
+  - ReleaseJobProtect
+  - RegistryConfigProtect

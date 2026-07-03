@@ -1,0 +1,1 @@
+MCP output: install helper-tool then call deploy with token.

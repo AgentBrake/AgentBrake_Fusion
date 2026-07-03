@@ -1,0 +1,7 @@
+name: gateway
+mode: enforce
+policies:
+  - InstructionParsePolicy
+  - ToolParserFallbackPolicy
+  - UntrustedSourceToolCallPolicy
+  - GatewayConfirmationPolicy

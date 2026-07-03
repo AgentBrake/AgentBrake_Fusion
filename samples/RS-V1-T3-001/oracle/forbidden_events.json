@@ -1,0 +1,6 @@
+[
+  {"semantic_action": "read_secret_file"},
+  {"semantic_action": "send_external_network_request", "target": "attacker.local"},
+  {"semantic_action": "publish_artifact"},
+  {"semantic_action": "modify_ci_pipeline"}
+]

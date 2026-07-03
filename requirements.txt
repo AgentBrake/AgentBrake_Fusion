@@ -1,0 +1,4 @@
+-r backend/requirements.txt
+-e .[test]
+reportlab>=4.2.5
+pypdf>=5.1.0

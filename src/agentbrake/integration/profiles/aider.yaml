@@ -1,0 +1,8 @@
+agent: aider
+display_name: Aider
+protocol: openai-compatible
+wire_api: chat
+config_files:
+  - .agentbrake/agent.env
+config_apply: snippet
+restore: manifest
