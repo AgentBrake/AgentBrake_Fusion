@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import base64
 import json
 import mimetypes
 import os
@@ -9,7 +10,6 @@ import shutil
 import socket
 import subprocess
 import time
-import base64
 from dataclasses import asdict
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -20,7 +20,6 @@ from urllib.request import Request, urlopen
 
 from ..approval_api import approval_events_summary
 from ..approvals import ApprovalCenter, ApprovalStore
-from ..audit import AuditLog
 from ..integration.coverage import build_coverage_report, filesystem_checks
 from ..integration.templates import load_config
 from ..models import ApprovalRequest

@@ -23,7 +23,6 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urljoin, urlparse, urlunparse
 from urllib.request import Request, urlopen
 
-
 OpenClawMode = str
 
 

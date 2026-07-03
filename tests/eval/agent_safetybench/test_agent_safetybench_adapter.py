@@ -1,13 +1,12 @@
 from __future__ import annotations
 
+from agentbrake.eval.agentdojo.compat.types import ToolCallContext
+from agentbrake.eval.agentdojo.gate.tool_firewall import AgentDojoToolFirewall
 from experiments.agent_safetybench.agentbrake_runner import (
     AgentSafetyBenchEvidenceBuilder,
     AgentSafetyBenchFusion,
     build_agent_safetybench_taxonomy,
-    infer_agent_safetybench_tool_spec,
 )
-from agentbrake.eval.agentdojo.compat.types import ToolCallContext
-from agentbrake.eval.agentdojo.gate.tool_firewall import AgentDojoToolFirewall
 
 
 def test_agent_safetybench_blocks_property_loss_link_click(tmp_path):

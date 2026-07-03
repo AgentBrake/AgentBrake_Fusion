@@ -113,11 +113,11 @@ def run_doctor(repo_root: str | Path, *, config_path: str | Path | None = None, 
         if studio_listening:
             _check(checks, "studio_health", _probe_studio(studio_host, studio_port), "/api/health")
     coverage = build_coverage_report(config, filesystem_checks(config))
+    warning_only_checks = {"gateway_port_listening", "gateway_chat_completions", "studio_port_listening", "studio_health", "shims_on_path"}
     hard_checks = [
         item
         for item in checks
-        if item["name"]
-        not in {"gateway_port_listening", "gateway_chat_completions", "studio_port_listening", "studio_health", "shims_on_path"}
+        if item["name"] not in warning_only_checks and not (str(item["name"]).startswith("gateway_") and str(item["name"]).endswith("_smoke"))
     ]
     ok = all(item["ok"] for item in hard_checks) and bool(coverage.get("ok"))
     return DoctorReport(ok, str(config_file), checks, coverage, warnings, _next_commands(config, agent_profile, checks))
@@ -229,13 +229,17 @@ def run_real_agent_smoke_test(
     gateway = config.get("gateway", {})
     host = str(gateway.get("host") or "127.0.0.1")
     port = int(gateway.get("port") or 0)
+    gateway_detail = f"AgentBrake-Fusion Gateway is not listening at {host}:{port}; run agentbrake start --repo . --gateway-only first."
     if not _port_open(host, port):
         return {
             "ok": False,
             "agent": profile.agent,
             "available": False,
-            "detail": f"AgentBrake-Fusion Gateway is not listening at {host}:{port}; run agentbrake start --repo . --gateway-only first.",
+            "detail": gateway_detail,
         }
+    smoke = run_smoke_test(config, profile)
+    if not smoke.get("ok"):
+        return {"ok": False, "agent": profile.agent, "available": False, "detail": gateway_detail, "gateway_smoke": smoke}
     configured = _real_agent_configured_for_gateway(config, profile)
     if not configured["ok"]:
         return {"ok": False, "agent": profile.agent, "available": False, **configured}

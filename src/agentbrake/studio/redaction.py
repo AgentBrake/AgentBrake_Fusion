@@ -20,7 +20,7 @@ def redact_value(value: Any, max_text: int = 8000) -> Any:
             if key == "contentBase64" and isinstance(v, str):
                 redacted[key] = TOKEN_RE.sub("<REDACTED_TOKEN>", v)
                 continue
-            redacted[key] = "<REDACTED>" if SENSITIVE_KEY_RE.search(key) and v else redact_value(v, max_text=max_text)
+            redacted[key] = "<REDACTED>" if SENSITIVE_KEY_RE.search(key) and isinstance(v, str) and v else redact_value(v, max_text=max_text)
         return redacted
     if isinstance(value, list):
         return [redact_value(v, max_text=max_text) for v in value]

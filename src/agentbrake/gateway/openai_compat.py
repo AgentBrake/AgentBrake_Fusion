@@ -267,6 +267,17 @@ def _content_chunks(content: str, size: int = 256) -> list[str]:
 
 
 def safe_block_message(reason: str, decisions: list[dict[str, Any]], trace_id: str) -> dict[str, Any]:
+    lines = ["AgentBrake-Fusion blocked or constrained high-risk tool calls before execution.", f"Audit trace ID: {trace_id}", ""]
+    for d in decisions:
+        action = d.get("action", {})
+        dec = d.get("decision", {})
+        lines.append(f"- Candidate action: {_redact_secret_text(action.get('raw_action'))}")
+        lines.append(f"  Semantic action: {action.get('semantic_action') or 'unknown'}")
+        lines.append(f"  Decision: {dec.get('decision') or 'unknown'}; risk score: {dec.get('risk_score')}")
+        lines.append(f"  Reasons: {', '.join(str(code) for code in dec.get('reason_codes', []))}")
+    lines.append("")
+    lines.append("Available approval outcomes: reject, sandbox-only, no-network, or block lifecycle operations for this run.")
+    return {"role": "assistant", "content": reason + "\n" + "\n".join(lines), "tool_calls": []}
     lines = ["AgentBrake-Fusion 已在工具执行前阻断或约束高风险工具调用。", f"审计追踪 ID：{trace_id}", ""]
     for d in decisions:
         action = d.get("action", {})
@@ -281,6 +292,16 @@ def safe_block_message(reason: str, decisions: list[dict[str, Any]], trace_id: s
 
 
 def safe_sandbox_only_message(reason: str, decisions: list[dict[str, Any]], trace_id: str) -> dict[str, Any]:
+    lines = ["AgentBrake-Fusion constrained these tool calls to sandbox-only execution.", f"Audit trace ID: {trace_id}", ""]
+    for d in decisions:
+        action = d.get("action", {})
+        dec = d.get("decision", {})
+        lines.append(f"- Candidate action: {_redact_secret_text(action.get('raw_action'))}")
+        lines.append(f"  Semantic action: {action.get('semantic_action') or 'unknown'}")
+        lines.append(f"  Decision: {dec.get('decision') or 'unknown'}; risk score: {dec.get('risk_score')}")
+        lines.append("  Host execution: blocked")
+        lines.append("  Next step: run only through the AgentBrake-Fusion sandbox, overlay, or preflight tooling.")
+    return {"role": "assistant", "content": reason + "\n" + "\n".join(lines), "tool_calls": []}
     lines = ["AgentBrake-Fusion 已将工具调用约束为仅沙箱处理。", f"审计追踪 ID：{trace_id}", ""]
     for d in decisions:
         action = d.get("action", {})

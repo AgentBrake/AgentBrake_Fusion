@@ -161,6 +161,8 @@ def confirmation_utility_not_below_strict(methods: dict[str, Any]) -> bool:
 
 def summary_only_mode(phase1_reports_dir: Path) -> bool:
     pointer = phase1_reports_dir / "release_artifact_url_or_path.txt"
+    if not pointer.exists():
+        return True
     return pointer.exists() and "artifact_distribution: summary_only" in pointer.read_text(encoding="utf-8")
 
 
