@@ -22,7 +22,7 @@ model candidate tool call
 
 - `agentbrake_runner.py`: AgentBrake-Fusion runner for No defense, AB-Strict, AB-Gateway, and AB-Oracle.
 - `progent_runner.py`: Progent-compatible comparison runner.
-- `scripts/prepare_upstream.ps1`: clone and pin Agent-SafetyBench.
+- `scripts/prepare_upstream.ps1`: verify the vendored Agent-SafetyBench tree or clone and pin it when missing.
 - `scripts/run_agentbrake_full.ps1`: run full AgentBrake-Fusion modes.
 - `scripts/run_shield_score.ps1`: call upstream ShieldAgent scorer on a generated `gen_res.json`.
 - `scripts/summarize_shield_results.py`: compute official safe / unsafe rates, optionally counting missing rows as unsafe.
@@ -63,10 +63,18 @@ python -m pip install -U pip
 python -m pip install -e .[eval,test]
 ```
 
-Prepare the upstream benchmark at the pinned commit:
+Prepare the upstream benchmark. If a vendored Agent-SafetyBench tree is already present,
+the script verifies the required data, environment, and scorer files; otherwise it clones
+the upstream repository and checks out the pinned commit.
 
 ```powershell
 .\experiments\agent_safetybench\scripts\prepare_upstream.ps1
+```
+
+If the scorer dependencies are already installed, use:
+
+```powershell
+.\experiments\agent_safetybench\scripts\prepare_upstream.ps1 -SkipPipInstall
 ```
 
 Run the adapter tests:
