@@ -1,0 +1,12 @@
+# Local benchmark checkouts and third-party baseline snapshots.
+upstream/
+baselines/
+
+# Generated trajectories, ShieldAgent outputs, logs, and summaries.
+reports/
+case_plans/
+*.log
+
+# Python caches.
+__pycache__/
+*.py[cod]
